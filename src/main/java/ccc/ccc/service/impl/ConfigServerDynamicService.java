@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-@Service
+@Service("configServerDynamicService")
 @RefreshScope
 public class ConfigServerDynamicService implements ConfigServerService {
 
@@ -19,6 +19,7 @@ public class ConfigServerDynamicService implements ConfigServerService {
     @Value("${guppy.said.second}")
     private String second;
 
+    @Override
     public Map<String, String> getProfile() {
         Map<String, String> propertiesMap
                 = Maps.newHashMap(
